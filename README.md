@@ -6,6 +6,23 @@
 
 ### Zapojení
 
+
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 15px; padding: 10px;"><b>NEO modul</b></td>
+<td style="font-size: 15px; padding: 10px;"><b>-></b></td>
+<td style="font-size: 15px; padding: 10px;"><b>Arduino UNO</b></td>
+</tr>
+   
+<tr>
+<td>VCC</td>
+<td>-></td>
+<td>3V3 / 5V</td>
+</tr>
+
+</tbody>
+</table>
 NEO modul -> Arduino UNO
    VCC    ->     5V
    GND    ->    GND
@@ -250,4 +267,6 @@ Serial.println(F("Packet queued"));
 Výstup
 ![alt text](https://github.com/davidvasicek/GPSModules/blob/master/ttn_output.png "Logo Title Text 1")
 
-celý kód k dispozici zde: 
+celý kód k dispozici zde: [ABP_TTN_GPS_MOTEINO.ino](https://github.com/davidvasicek/GPSModules/blob/master/ABP_TTN_GPS_MOTEINO.ino).
+
+Upozornění: V případě použití kombinací knihoven TinyGPS++ a LMIC je potřeba použít microprocesor disponující větší programovatelnou pamětí než 32KB (Samotný LMIC zabere cca 22KB)
