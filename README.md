@@ -9,26 +9,34 @@
 
 <table style="width: 100%;">
 <tbody>
-<tr>
-<td style="font-size: 15px; padding: 10px;"><b>NEO modul</b></td>
-<td style="font-size: 15px; padding: 10px;"><b>-></b></td>
-<td style="font-size: 15px; padding: 10px;"><b>Arduino UNO</b></td>
-</tr>
-   
-<tr>
-<td>VCC</td>
-<td>-></td>
-<td>3V3 / 5V</td>
-</tr>
-
+   <tr>
+   <td style="font-size: 15px; padding: 10px;"><b>NEO modul</b></td>
+   <td style="font-size: 15px; padding: 10px;"><b>-></b></td>
+   <td style="font-size: 15px; padding: 10px;"><b>Arduino UNO</b></td>
+   </tr>
+   <tr>
+      <td>VCC</td>
+      <td>-></td>
+      <td>3V3 / 5V</td>
+   </tr>
+   <tr>
+      <td>GND</td>
+      <td>-></td>
+      <td>GND</td>
+   </tr>
+   <tr>
+      <td>RX</td>
+      <td>-></td>
+      <td>3</td>
+   </tr>
+   <tr>
+      <td>TX</td>
+      <td>-></td>
+      <td>2</td>
+   </tr>
 </tbody>
 </table>
-NEO modul -> Arduino UNO
-   VCC    ->     5V
-   GND    ->    GND
-   RX     ->     3
-   TX     ->     2
-   
+
 ### Arduino kód (bez použití knihovny)
 
 Výstupem tohoto kódu jsou NMEA (National Marine Electronics Association) zprávy (surová data je nutné zpracovat).
