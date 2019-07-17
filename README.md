@@ -210,6 +210,42 @@ Date: 7/15/2019
 Time: 14:42:59.00
 ```
 
-### Arduino kód (odeslaní dat do TTN s Cayenne LPP)
+### Arduino kód (odeslaní dat do TTN ve formátu Cayenne LPP)
 
+```c
+float latitude = 0;
+float longitude = 0;
+float altitude = 0;
+float satelittes = 0;
+float speed = 0;
+float timestamp = 0;
+
+while (gpsSerial.available() > 0){
+   if (gps.encode(gpsSerial.read())){
+
+      if (gps.location.isValid()){
+
+         latitude = gps.location.lat();
+         longitude = gps.location.lng();
+         altitude = gps.altitude.meters();
+         altitude = gps.satellites.value();
+         altitude = gps.altitude.meters();
+       }
+      
+      if (gps.date.isValid() && gps.time.isValid()){
+
+         uint32_t timestamp = lpp.convertToEpochtime(gps.date.year(), gps.date.month(), gps.date.day(), gps.time.hour(), gps.time.minute(), gps.time.second());
+       }
+     }
+   }
+      
+lpp.reset();
+lpp.addGPSplus(1, latitude, longitude, altitude, satelittes, speed, timestamp);    
+                                                   
+LMIC_setTxData2(1,lpp.getBuffer(), lpp.getSize(), 0);  
+
+Serial.println(F("Packet queued"));
+```
+
+Výstup
 
