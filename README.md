@@ -277,4 +277,6 @@ Výstup
 
 celý kód k dispozici zde: [ABP_TTN_GPS_MOTEINO.ino](https://github.com/davidvasicek/GPSModules/blob/master/ABP_TTN_GPS_MOTEINO.ino).
 
-Upozornění: V případě použití kombinací knihoven TinyGPS++ a LMIC je potřeba použít microprocesor disponující větší programovatelnou pamětí než 32KB (Samotný LMIC zabere cca 22KB)
+Upozornění: 
+- V případě použití kombinací knihoven TinyGPS++ a LMIC je potřeba použít microprocesor disponující větší programovatelnou pamětí než 32KB (Samotný LMIC zabere cca 22KB)
+- Při prvním spuštění GPS je nutné GPS modul umístit do otevřeného prostoru s přímým výhledem na oblohu. Zvlášť, když byl modul déle než 14dní bez napájení a baterie udržující paměť BBR (Battery Backed RAM) je vybitá. Pak je GPS tzv. "studený" a trvá mu mnohem déle zafixovat polohu. (při měření jsem prvních výsledků docílil až po 6-10 minutách). GPS modul je také osazen indikační LED diodou (Svítí konstantně - hledá satelity, Bliká (1Hz) - zafixovaná pozice)
