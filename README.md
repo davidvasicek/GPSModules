@@ -84,11 +84,11 @@ $GPVTG,,T,,M,0.082,N,0.151,K,A*2C
 
 ### Arduino kód (s použitím knihovny)
 
-Výstupem tohoto kódu jsou formátovny NMEA zprávy do čitelné podoby. K tomu slouží knihovny, pro tyto potřeby určené.
+Výstupem tohoto kódu jsou zprávy NMEA formátovány do čitelné podoby. K tomu slouží knihovny, pro tyto potřeby určené.
 
 #### Knihovna
 
-Knihovna: [TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus) 
+Knihovna: např. [TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus) 
 
 Metody knihovny: 
 
