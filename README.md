@@ -249,3 +249,5 @@ Serial.println(F("Packet queued"));
 
 Výstup
 ![alt text](https://github.com/davidvasicek/GPSModules/blob/master/ttn_output.png "Logo Title Text 1")
+
+celý kód k dispozici zde: 
