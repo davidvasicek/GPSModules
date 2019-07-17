@@ -12,7 +12,7 @@ NEO modul -> Arduino UNO
    RX     ->     3
    TX     ->     2
    
-### Arduino kód 
+### Arduino kód (bez použití knihovny)
 
 Výstupem tohoto kódu jsou NMEA (National Marine Electronics Association) zprávy (surová data je nutné zpracovat).
 
@@ -46,6 +46,7 @@ void loop()
 }
 ```
 ```
+Výstup:
 $GPGGA,143241.00,4940.07303,N,01820.56767,E,1,07,1.46,292.8,M,41.1,M,,*5C
 $GPGSA,A,3,10,08,14,32,27,20,18,,,,,,3.40,1.46,3.07*01
 $GPGSV,3,1,12,01,,,32,08,71,248,42,10,49,059,37,11,,,32*7B
@@ -55,11 +56,16 @@ $GPGLL,4940.07303,N,01820.56767,E,143241.00,A,A*68
 $GPRMC,143242.00,A,4940.07302,N,01820.56778,E,0.082,,150719,,,A*7C
 $GPVTG,,T,,M,0.082,N,0.151,K,A*2C
 ```
+
+### Arduino kód (s použitím knihovny)
+
+Výstupem tohoto kódu jsou formátovny NMEA zprávy do čitelné podoby. K tomu slouží knihovny, pro tyto potřeby určené.
+
 #### Knihovna
 
 Knihovna: [TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus) 
 
-Metody: 
+Metody knihovny: 
 
 ```c
 gps.location.lat() // Latitude in degrees (double)
@@ -95,7 +101,7 @@ gps.satellites.value() // Number of satellites in use (u32)
 gps.hdop.value() // Horizontal Dim. of Precision (100ths-i32)
 ```
 
-použití:
+použití knihovny:
 
 ```c
 #include <TinyGPS++.h>
@@ -193,3 +199,17 @@ void displayInfo()
   delay(1000);
 }
 ```
+```
+Výstup:
+Latitude: 49.667858
+Longitude: 18.343093
+Altitude: 0.00
+Satellites: 4
+Speed: 0
+Date: 7/15/2019
+Time: 14:42:59.00
+```
+
+### Arduino kód (odeslaní dat do TTN s Cayenne LPP)
+
+
